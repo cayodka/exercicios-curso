@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: red;
+            padding: 10px 20px;
+            overflow: hidden;
+        }
+
+        #menubt {
+            margin-right: 50vh;
+            background-color: purple;
+        }
+
+        #logo img {
+            height: 30px;
+            width: 30px;
+        }
+
+        #search {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 250px;
+            box-shadow: none;
+            transition: box-shadow 0.3s ease;
+        }
+
+        #search:focus {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #menudiv {
+            display: flex;
+            gap: 30px;
+        }
+
+        #menudiv a {
+            text-decoration: none;
+            color: black;
+        }
+
+        #menudiv a:hover {
+            background-color: #ddd;
+        }
+
+        #menubt:checked ~ #menudiv {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label img {
+            cursor: pointer;
+        }
+        
+        @media (min-width: 769px) {
+            #search {
+                width: 40%;
+            }
+
+            #logo {
+                flex: 1;
+            }
+
+            #menubt {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="menubt">
+        <label for="menubt">
+            <img src="https://img.icons8.com/?size=100&id=8113&format=png&color=000000" height="30px" width="30px" alt="ícone de menu">
+        </label>
+        <a id="logo" href="#">
+            <img src="/logo.jfif" alt="logo">
+        </a>
+        <input type="text" id="search" placeholder="Pesquisar...">
+        <div id="menudiv">
+            <a href="#home">Início</a>
+            <a href="#products">Produtos</a>
+            <a href="#about-us">Sobre nós</a>
+        </div>
+    </header>
+</body>
+</html>
