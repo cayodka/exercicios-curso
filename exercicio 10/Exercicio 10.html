@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <title>Exercicio 10</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "MedievalSharp", serif;
+
+        }
+
+        body {
+            display: flex;
+            overflow: hidden;
+            justify-content: flex-start;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            background-image: url(/assets/background\ menu.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:cover;
+            color: black;
+            font-size: 20px;
+            height: 100vh;
+            width: 10rem;
+            position: absolute;
+            left: -100rem;
+            transition: left 0.5s ease;
+        }
+
+        header a {
+            display: flex;
+            flex-direction: column;
+            font-size: 30px;
+        }
+
+        #link1 {
+            box-shadow: 1px 0px 10px 5px chartreuse;
+            background-color: rgba(128, 255, 0, 0.184);
+        }
+
+        #link1:hover {
+            text-shadow: 5px 10px 10px chartreuse, 0px 0px 20px chartreuse, 0px 0px 30px chartreuse;
+        }
+
+        #link1 img:hover {
+            content: url(/assets/ataque.png);
+        }
+
+        #link2 {
+            box-shadow: 1px 0px 10px 5px fuchsia;
+            background-color: rgba(255, 0, 255, 0.196);
+        }
+
+        #link2:hover {
+            text-shadow: 0px 0px 10px fuchsia, 0px 0px 20px fuchsia, 0px 0px 30px fuchsia;
+        }
+
+        #link2 img:hover {
+            content: url(/assets/escudo.png);
+        }
+
+        #link3 {
+            box-shadow: 1px 0px 10px 5px mediumspringgreen;
+            background-color: rgba(0, 250, 154, 0.199);
+        }
+
+        #link3:hover {
+            text-shadow: 0px 0px 10px mediumspringgreen, 0px 0px 10px mediumspringgreen, 0px 0px 10px mediumspringgreen
+        }
+
+        #link3 img:hover {
+            content: url(/assets/toxico.png);
+        }
+
+        #btback {
+            height: 5rem;
+            width: 5rem;
+            background-image: url(/assets/background\ bt.png);
+            background-position: -10px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            cursor: pointer;
+            transition: left 0.5s ease;
+        }
+
+        input[type="checkbox"]:checked+#container #btback {
+            left: 10rem;
+        }
+
+        input[type="checkbox"]:checked+#container header {
+            left: 0;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-image: url(/assets/background\ menu.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #f0f0f0;
+            border: 1px solid #ccc;
+            top: -10%;
+            left: 12vh;
+            flex-direction: column;
+            padding: 5px 0;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            z-index: 999;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #000;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" id="toggle">
+    <div id="container">
+
+        <label for="toggle" id="btback"></label>
+        <header>
+            <div class="dropdown">
+                <a id="link1"><img src="/assets/katana.png" alt="Ataque">Ataque</a>
+                <div class="dropdown-menu">
+                    <a>Guerreiro</a>
+                    <a>Cavaleiro</a>
+                    <a>Barbaro</a>
+                    <a>Ninja</a>
+                    <a>Ranger</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a id="link2"><img src="/assets/defesa.png" alt="Defesa">Defesa</a>
+                <div class="dropdown-menu">
+                    <a>Mago</a>
+                    <a>Necromante</a>
+                    <a>Paladino</a>
+                    <a>Druida</a>
+                    <a>M/ combate</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a id="link3"><img src="/assets/potion.png" alt="Suporte">Suporte</a>
+                <div class="dropdown-menu">
+                    <a>Bardo</a>
+                    <a>Samaritanor</a>
+                    <a>Monge</a>
+                    <a>Nobre</a>
+                    <a>Abençoado</a>
+                </div>
+            </div>
+        </header>
+    </div>
+</body>
+
+</html>
